@@ -1,0 +1,110 @@
+body {
+  background-color: #343A40;
+}
+
+.container {
+  background-color: white;
+  width: 500px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6%;
+}
+
+.container>h1 {
+  padding: 20px 0;
+}
+
+#form {
+  padding-bottom: 40px;
+  width: 100%;
+}
+
+#form>div {
+  margin-bottom: 25px;
+}
+
+.load {
+  width: 100%;
+}
+
+#loan {
+  width: 360px;
+  height: 20px;
+  font-weight: bold;
+}
+
+.interest {
+  width: 100%;
+}
+
+#interest {
+  width: 360px;
+  margin-right: 6px;
+  height: 20px;
+  font-weight: bold;
+}
+
+.years {
+  width: 100%;
+}
+
+#years {
+  width: 360px;
+  margin-left: 10px;
+  height: 20px;
+  font-weight: bold;
+}
+
+.calc {
+  width: 360px;
+  margin-left: 10px;
+  height: 26px;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: rgb(18, 18, 32);
+  color: rgb(246, 242, 242);
+  outline: none;
+  cursor: pointer;
+}
+
+.calc:active {
+  opacity: 0.8;
+}
+
+#monthly {
+  width: 247px;
+  height: 20px;
+  background-color: #E9ECEF;
+  border: 0.7px solid #b4b6b7;
+  font-weight: bold;
+}
+
+#total {
+  width: 269px;
+  height: 20px;
+  background-color: #E9ECEF;
+  border: 0.7px solid #b4b6b7;
+  font-weight: bold;
+}
+
+#tinterest {
+  width: 277px;
+  height: 20px;
+  background-color: #E9ECEF;
+  border: 0.7px solid #b4b6b7;
+  font-weight: bold;
+}
+
+.error {
+  background-color: rgb(255, 0, 0);
+  color: white;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 19px;
+}
+
+#loading,
+.results {
+  display: none;
+}

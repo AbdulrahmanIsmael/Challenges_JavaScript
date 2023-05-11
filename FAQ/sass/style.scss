@@ -1,0 +1,98 @@
+@import "vars";
+@import "functions";
+@import "mixins";
+@import "anims";
+
+/* Importing Roboto Font */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto Condensed", sans-serif;
+  background-color: #ddd;
+}
+
+.container {
+  max-width: 500px;
+  margin: 40px auto;
+  @include center;
+  flex-direction: column;
+  gap: 30px;
+  h1 {
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+
+  .faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    .faq {
+      position: relative;
+      border: 1px solid #999;
+      border-radius: 10px;
+      padding: 30px;
+      width: 600px;
+      transition: all 300ms ease;
+      &.collapse {
+        background-color: #fff;
+        h2 {
+          margin-bottom: 20px;
+        }
+        p {
+          display: block;
+        }
+
+        .btn {
+          i {
+            @include center;
+            background-color: #333;
+            color: #fff;
+            border-radius: 50%;
+            padding: 5px 7px;
+          }
+          i.fa-times {
+            display: inline;
+          }
+          i.fa-chevron-down {
+            display: none;
+          }
+        }
+        &::before {
+          content: "\f086";
+          font: var(--fa-font-regular);
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          font-size: 130px;
+          color: rgba(28, 28, 195, 0.1);
+        }
+      }
+
+      p {
+        display: none;
+        max-width: 500px;
+        color: #333;
+        font-size: 16px;
+      }
+      .btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 30px;
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+        font-size: 15px;
+        i.fa-times {
+          display: none;
+        }
+      }
+    }
+  }
+}

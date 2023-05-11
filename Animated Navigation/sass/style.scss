@@ -1,0 +1,110 @@
+@import "vars";
+@import "functions";
+@import "mixins";
+@import "anims";
+
+/* Importing Roboto Font */
+@import url("https://fonts.googleapis.com/css?family=Mulidisplay=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: linear-gradient(to bottom, #eafbff 50%, #5290f9 50%);
+  font-family: "Muli", sans-serif;
+  @include center;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+}
+
+.container {
+  #navbar {
+    background-color: #fff;
+    width: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    padding: 15px;
+    transition: all 500ms linear;
+    .list {
+      gap: 20px;
+      width: 0;
+      transition: all 500ms linear;
+      li {
+        transform: rotateY(360deg);
+        opacity: 0;
+        transition: all 500ms linear;
+        a {
+          text-decoration: none;
+          color: #333;
+          letter-spacing: 1px;
+        }
+      }
+    }
+
+    #btn {
+      cursor: pointer;
+      border: 0;
+      background-color: transparent;
+      width: 20px;
+      height: 20px;
+      position: relative;
+
+      .line {
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #5290f9;
+      }
+
+      .line1 {
+        left: 0;
+        top: 5px;
+        transform: rotate(0deg);
+        transition: all 500ms linear;
+      }
+
+      .line2 {
+        left: 0;
+        bottom: 5px;
+        transform: rotate(0deg);
+        transition: all 500ms linear;
+      }
+    }
+
+    &.open {
+      width: 400px;
+      .list {
+        li {
+          transform: rotateY(0);
+          opacity: 1;
+        }
+      }
+
+      #btn {
+        .line {
+          top: 50%;
+          left: 0;
+        }
+
+        .line1 {
+          transform: rotate(-765deg);
+        }
+
+        .line2 {
+          transform: rotate(765deg);
+        }
+      }
+    }
+  }
+}

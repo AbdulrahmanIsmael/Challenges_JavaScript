@@ -1,0 +1,66 @@
+@import "vars";
+@import "functions";
+@import "mixins";
+@import "anims";
+
+/* Importing Roboto Font */
+@import url("https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: purple;
+  @include center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.container {
+  border-radius: 20px;
+  background-color: #fff;
+  min-height: 300px;
+  width: 600px;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    font-family: "Akaya Telivigala", cursive;
+    font-size: 32px;
+    font-weight: 600;
+  }
+
+  .joke {
+    p {
+      font-family: "Metal Mania", cursive;
+      font-size: 27px;
+      font-weight: 500;
+    }
+  }
+
+  .btn {
+    font-family: "Akaya Telivigala", cursive;
+    cursor: pointer;
+    padding: 15px 30px;
+    background-color: rgb(83, 78, 78);
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 18px;
+    transition: 200ms;
+    &:active {
+      transform: scale(0.97);
+    }
+
+    &:focus {
+      outline: 0;
+    }
+  }
+}

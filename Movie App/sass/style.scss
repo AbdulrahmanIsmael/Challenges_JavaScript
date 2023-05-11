@@ -1,0 +1,144 @@
+@import "vars";
+@import "functions";
+@import "mixins";
+@import "anims";
+
+/* Importing Roboto Font */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto Condensed", sans-serif;
+  background-color: $bg-color;
+  color: #fff;
+}
+
+.container {
+  width: 90%;
+
+  @include mediamax(1119px) {
+    width: 50%;
+  }
+
+  @include mediamax(767px) {
+    width: 80%;
+  }
+}
+
+/* ################################################################################################### */
+
+#header {
+  background-color: $header-color;
+  padding: 20px 0;
+  box-shadow: 0px 1px 5px #111;
+  .container {
+    margin: 0 auto;
+    @include center;
+    justify-content: flex-end;
+    #search {
+      font-family: "Roboto Condensed", sans-serif;
+      padding: 8px 15px;
+      border-radius: 15px;
+      border: 3px solid $bg-color;
+      color: #fff;
+      font-size: 16px;
+      background-color: transparent;
+      transition: 100ms linear;
+      &:focus {
+        outline: 0;
+        background-color: $bg-color;
+      }
+      &::placeholder {
+        font-family: "Roboto Condensed", sans-serif;
+        color: rgba($color: #fff, $alpha: 0.5);
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+#main-content {
+  .container {
+    margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-self: flex-start;
+    gap: 20px;
+    .main-content-movie {
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 23%;
+      height: 100%;
+      .movie-image {
+        width: 100%;
+      }
+
+      .movie-rating {
+        height: 80px;
+        padding: 10px 10px 30px;
+        background-color: $header-color;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .name {
+          font-size: 20px;
+          color: whitesmoke;
+        }
+
+        .rating {
+          background-color: $bg-color;
+          padding: 2px 3px;
+          border-radius: 3px;
+          font-size: 25px;
+          font-weight: 600;
+          &.good {
+            color: rgb(10, 150, 10);
+          }
+
+          &.intermediate {
+            color: rgb(236, 218, 24);
+          }
+          &.bad {
+            color: rgb(155, 10, 10);
+          }
+        }
+      }
+
+      .movie-info {
+        background-color: #fff;
+        color: #111;
+        padding: 50px 30px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: translateY(101%);
+        transition: 500ms ease;
+        h2 {
+          margin-bottom: 40px;
+          color: #333;
+        }
+
+        .movie-info-story {
+          line-height: 30px;
+        }
+      }
+
+      &:hover {
+        .movie-info {
+          transform: translateY(0%);
+        }
+      }
+      @include mediamax(1119px) {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,126 @@
+@import "vars";
+@import "functions";
+@import "mixins";
+@import "anims";
+
+/* Importing Roboto Font */
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  // overflow-x: hidden;
+  background-color: #333;
+  color: #222;
+}
+
+.container {
+  background-color: #fafafa;
+  transform-origin: top left;
+  padding: 40px;
+  width: 100vw;
+  min-height: 100vh;
+  transition: transform 500ms;
+  &.rotate {
+    transform: rotate(-18deg);
+    + #nav {
+      ul {
+        transform: translateX(0);
+        transition-delay: 500ms;
+      }
+    }
+    .circle {
+      transform: rotate(-75deg);
+    }
+  }
+  .circle {
+    position: fixed;
+    top: 0;
+    left: -100px;
+    top: -100px;
+    transition: transform 500ms;
+    .circle-container {
+      background-color: coral;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      position: relative;
+      button {
+        position: absolute;
+        cursor: pointer;
+        font-size: 26px;
+        color: #fff;
+        background-color: transparent;
+        border: 0;
+        top: 50%;
+        left: 50%;
+        height: 100px;
+        &.bars {
+          left: 60%;
+        }
+        &.close {
+          top: 60%;
+          transform: rotate(90deg);
+          transform-origin: top left;
+        }
+      }
+    }
+  }
+
+  .content {
+    background-color: #fafafa;
+    max-width: 1000px;
+    margin: 50px auto;
+    img {
+      max-width: 100%;
+    }
+    small {
+      font-style: italic;
+      color: #555;
+      font-size: 14px;
+    }
+    p {
+      line-height: 1.4;
+      color: #333;
+      margin: 20px 0;
+    }
+    h2 {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+#nav {
+  z-index: 100;
+  position: relative;
+  ul {
+    transform: translateX(-100%);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 50px;
+    padding-left: 25px;
+    list-style-type: none;
+    color: #fff;
+    transition: transform 500ms;
+    li {
+      cursor: pointer;
+      margin: 50px 0;
+      + li {
+        margin-left: 30px;
+      }
+      &:last-of-type {
+        margin-left: 40px;
+      }
+      i {
+        font-size: 20px;
+        margin-right: 10px;
+      }
+    }
+  }
+}

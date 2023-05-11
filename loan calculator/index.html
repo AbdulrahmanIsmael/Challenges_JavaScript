@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="Loan Calculator"
+      content="It is a simple loan calculation application"
+    />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <title>Loan Calculator</title>
+  </head>
+
+  <body>
+    <!-- The Container -->
+    <div class="container">
+      <h1 class="heading">Loan Calculator</h1>
+
+      <!-- Inputs -->
+      <form id="form" class="inputs" style="border-bottom: 1px solid">
+        <!-- Loan Amount -->
+        <div class="loan">
+          <span class="dollar-sign">$</span>
+          <input
+            type="number"
+            name="loan"
+            id="loan"
+            placeholder="the loan..."
+          />
+        </div>
+        <!-- Annual Interest rate -->
+        <div class="interest">
+          <span class="percent-sign">%</span>
+          <input
+            type="number"
+            name="interest"
+            id="interest"
+            placeholder="the interest..."
+          />
+        </div>
+        <!-- years required to pay -->
+        <div class="years">
+          <input
+            type="number"
+            name="years"
+            id="years"
+            placeholder="Years to pay..."
+          />
+        </div>
+        <!-- Submit Button -->
+        <input type="submit" value="calculate" class="calc" />
+      </form>
+      <!-- Loading before Showing results -->
+      <img src="/img/loading.gif" alt="Loading" id="loading" />
+
+      <!-- Results -->
+      <form id="form" class="results" style="margin-top: 50px">
+        <!-- Monthly Payment -->
+        <div class="loan">
+          <span class="dollar-sign">Monthly Payment</span>
+          <input type="number" name="loan" id="monthly" disabled />
+        </div>
+        <!-- total payment -->
+        <div class="interest">
+          <span class="percent-sign">Total Payment</span>
+          <input type="number" name="interest" id="total" disabled />
+        </div>
+        <!-- Total interest -->
+        <div class="years">
+          <span>Total Interest</span>
+          <input type="number" name="years" id="tinterest" disabled />
+        </div>
+      </form>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

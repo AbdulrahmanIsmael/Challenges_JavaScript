@@ -1,0 +1,46 @@
+@import "vars";
+@import "functions";
+@import "mixins";
+@import "anims";
+
+/* Importing Roboto Font */
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Roboto+Mono&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto Mono", sans-serif;
+  height: 100vh;
+  background-color: #850385;
+  color: #fff;
+}
+
+.container {
+  height: 100%;
+  @include center;
+  flex-wrap: wrap;
+  gap: 200px;
+  .container-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    .container-icon {
+      font-size: 110px;
+    }
+
+    .container-counter {
+      font-size: 80px;
+    }
+
+    .container-text {
+      font-size: 25px;
+      letter-spacing: 1px;
+    }
+  }
+}

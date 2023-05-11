@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="css/style.css")
+    title Random Choice Picker
+  body
+    .container
+      p.text1 Enter all of the choices divided by a comma (',').
+      p.text2 Press enter when you're done
+      textarea(
+        name="choices",
+        cols="65",
+        rows="7", 
+        id="choices", 
+        placeholder="Enter Your Choices..."
+      )
+      #card-container
+    |
+    |
+    script(src="js/app.js")

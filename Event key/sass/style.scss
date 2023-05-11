@@ -1,0 +1,44 @@
+@import "vars";
+@import "functions";
+@import "mixins";
+@import "anims";
+
+/* Importing Roboto Font */
+@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  @include center;
+  flex-direction: column;
+  text-align: center;
+  height: 100vh;
+}
+
+.container {
+  .key {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    font-size: 25px;
+    font-weight: 600;
+    padding: 20px;
+    border: 2px solid #999;
+    background-color: #eee;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    min-width: 200px;
+    margin: 10px;
+    small {
+      position: absolute;
+      top: -30px;
+      font-size: 17px;
+      color: #888;
+    }
+  }
+}

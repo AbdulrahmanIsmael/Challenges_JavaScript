@@ -1,0 +1,18 @@
+/* centering everything in the container (do not forget the height of the container) */
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin minMedia($num) {
+  @media (min-width: $num) {
+    @content;
+  }
+}
+
+@mixin maxMedia($num) {
+  @media (max-width: $num) {
+    @content;
+  }
+}

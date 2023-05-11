@@ -1,0 +1,48 @@
+@import "vars";
+@import "functions";
+@import "mixins";
+@import "anims";
+
+/* Importing Roboto Font */
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  @include center;
+  flex-direction: column;
+  background-color: #eee;
+  overflow-x: hidden;
+}
+
+.container {
+  height: 100%;
+  margin-top: 20px;
+  .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(33, 33, 165);
+    color: #fff;
+    height: 200px;
+    width: 350px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    border-radius: 20px;
+    transition: transform 500ms ease;
+    &:nth-of-type(even) {
+      transform: translateX(-500%);
+    }
+    &:nth-of-type(odd) {
+      transform: translateX(500%);
+    }
+    &.show {
+      transform: translateX(0);
+    }
+  }
+}

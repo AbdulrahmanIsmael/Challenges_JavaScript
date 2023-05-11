@@ -1,0 +1,18 @@
+/* centering everything in the container (do not forget the height of the container) */
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin centerPositionX {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin centerPositionY {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}

@@ -1,0 +1,64 @@
+@import "vars";
+@import "functions";
+@import "mixins";
+@import "anims";
+
+/* Importing Roboto Font */
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  font-family: "Muli", sans-serif;
+  background-color: $bg-color;
+}
+
+.container {
+  @include center;
+  flex-direction: column;
+  height: 100%;
+  width: 600px;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 700;
+  word-spacing: 1px;
+  text-align: center;
+  .text2 {
+    margin-top: 4px;
+  }
+  #choices {
+    font-weight: bold;
+    border: 0;
+    margin-top: 20px;
+    padding: 10px 0 0 10px;
+    border-radius: 5px;
+    width: 100%;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  #card-container {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    font-size: 17px;
+    .card {
+      padding: 5px 10px;
+      border-radius: 10px;
+      background-color: rgb(193, 60, 16);
+
+      &.highlighted-card {
+        background-color: rgb(14, 14, 128);
+      }
+    }
+  }
+}

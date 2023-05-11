@@ -1,0 +1,6 @@
+/* centering everything in the container (do not forget the height of the container) */
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

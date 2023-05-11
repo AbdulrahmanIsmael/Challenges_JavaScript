@@ -1,0 +1,24 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="css/style.css")
+    title Drink Water
+  body
+    .container
+      h1 Drink Water
+      p Goal : 2 Liters
+      .big-cup.cup
+        .big-cup-empty
+          h2 2L
+          p Remained
+        .big-cup-full
+          h2 12.5%
+      .small-cups
+        p Select how many glasses of water you have drank
+        include includes/include.pug
+    |
+    |
+    script(src="js/app.js") 

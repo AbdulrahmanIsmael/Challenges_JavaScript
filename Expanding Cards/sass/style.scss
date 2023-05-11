@@ -1,0 +1,55 @@
+@import "vars";
+@import "functions";
+@import "mixins";
+@import "anims";
+
+/* Importing Roboto Font */
+@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  @include center;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  width: 90vw;
+  .card {
+    height: 80vh;
+    border-radius: 50px;
+    color: #fff;
+    margin: 0 15px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex: 0.5; // flex properity works the same way as order properity but it cares about the gowing of the elements and not their orders
+    cursor: pointer;
+    position: relative;
+    transition: flex 800ms ease;
+    h2 {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      font-size: 24px;
+      font-weight: 600;
+      opacity: 0;
+      transition: opacity 800ms ease;
+    }
+    &.active {
+      flex: 5;
+      h2 {
+        opacity: 1;
+        transition: opacity 800ms ease 300ms;
+      }
+    }
+  }
+}

@@ -1,0 +1,101 @@
+@import "vars";
+@import "functions";
+@import "mixins";
+@import "anims";
+
+/* Importing Roboto Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: 200ms ease;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  @include center;
+  align-items: flex-start;
+  background-color: $main-color;
+  color: #fff;
+  margin-top: 20px;
+}
+
+.container {
+  @include center;
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
+  .text {
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 15px;
+    }
+  }
+
+  .cup {
+    background-color: #fff;
+    border: 5px solid $calm-color;
+    color: $calm-color;
+    border-radius: 0 0 55px 55px;
+  }
+
+  .big-cup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 190px;
+    height: 350px;
+    overflow: hidden; //* hide the full big cup outside the container of the big cup
+    .big-cup-empty {
+      font-size: 15px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      @include center;
+    }
+
+    .big-cup-full {
+      @include center;
+      background-color: rgb(43, 119, 181);
+      color: #fff;
+      font-weight: 600;
+      height: 0;
+      border-radius: 0 0 15px 15px;
+      width: 100%;
+      font-size: 25px;
+    }
+  }
+
+  .cups {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    .small-cups {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 13px;
+      width: 240px;
+      .small-cup {
+        cursor: pointer;
+        @include center;
+        font-size: 10px;
+        width: 50px;
+        height: 90px;
+        border-radius: 0 0 13px 13px;
+        &.full {
+          background-color: rgba(43, 119, 181, 0.5);
+          color: #fff;
+        }
+      }
+    }
+  }
+}

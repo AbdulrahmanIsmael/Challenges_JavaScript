@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.bg {
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  background: url("../images/bg.jpg") no-repeat center center;
+  background-size: cover;
+  height: calc(100vh + 100px);
+  width: calc(100vw + 100px);
+  filter: blur(50px);
+  transition: filter 400ms linear;
+}
+
+.text {
+  position: absolute;
+  color: #fff;
+  font-size: 50px;
+  font-weight: 600;
+}
